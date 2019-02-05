@@ -2,16 +2,14 @@ const API_URL = `https://api.taboola.com/1.2/json/apitestaccount/recommendations
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
-    fetch(API_URL, {
-      mode: "cors"
-    })
+    fetch(API_URL)
       .then(res => res.json())
       .then(json => displayFetch(json))
   });
 
 
 displayFetch = (data) => {
-  console.log('hi there you!', data.list);
+  console.log(data.list);
 }
 
 
