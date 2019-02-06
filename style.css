@@ -27,25 +27,17 @@ body {
     content: "";
     display: table;
     clear: both;
-    border: black solid thin;
   }
 }
 
-#img-1 {
+.images {
   width: 90%
 }
-#img-2 {
-  width: 90%
-}
-#img-3 {
-  width: 90%
-}
-#img-4 {
-  width: 90%
-}
-#img-5 {
-  width: 90%
-}
-#img-6 {
-  width: 90%
+
+.titles {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
