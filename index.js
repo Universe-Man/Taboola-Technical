@@ -36,18 +36,13 @@ const cat5 = document.getElementById('cat-5');
 const cat6 = document.getElementById('cat-6');
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded and parsed");
     fetch(API_URL)
       .then(res => res.json())
       .then(json => displayFetch(json))
   });
 
-// image title branding
-
 displayFetch = (data) => {
   let dataArray = data.list;
-  console.log(dataArray);
-  console.log("first", dataArray[0]);
   for (let i = 0; i < dataArray.length; i++) {
     let targetImg = null;
     let targetTitle = null;
@@ -55,8 +50,8 @@ displayFetch = (data) => {
     let targetBox = null;
     let targetCategory = null;
     let imgUrl = dataArray[i].thumbnail[0].url;
-    let imgH = dataArray[i].thumbnail[0].height;
-    let imgW = dataArray[i].thumbnail[0].width;
+    // let imgH = dataArray[i].thumbnail[0].height;
+    // let imgW = dataArray[i].thumbnail[0].width;
     let title = dataArray[i].name;
     let branding = dataArray[i].branding;
     let link = dataArray[i].url;
