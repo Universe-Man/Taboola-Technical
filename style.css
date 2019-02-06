@@ -7,14 +7,12 @@ body {
   font-size: 50px;
 }
 
-#main-display {
-  width: 90%
-}
-
-
 @media only screen and (max-width: 768px) {
   .column {
-    width: 100%
+    float: left;
+    width: 100%;
+    height: auto;
+    text-align: center;
   }
 }
 
@@ -24,27 +22,13 @@ body {
     width: 33.33%;
     height: auto;
     text-align: center;
-    /* padding: 10px; */
-    /* border: black solid thin; */
   }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  border: black solid thin;
-
-}
-}
-
-/* #box-1 {
-  padding: 10px;
-  width: 25px;
-  text-align: center;
-} */
-
-#title1 {
-  /* text-align: center; */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    border: black solid thin;
+  }
 }
 
 #img-1 {
