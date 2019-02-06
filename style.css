@@ -1,3 +1,19 @@
 body {
   background-color: green;
 }
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  height: auto;
+  /* border: black solid thin; */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  border: black solid thin;
+
+}
