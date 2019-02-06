@@ -85,8 +85,8 @@ displayFetch = (data) => {
       targetBox = display6;
     }
     targetImg.src = imgUrl;
-    targetImg.height = imgH;
-    targetImg.width = imgW;
+    // targetImg.height = imgH;
+    // targetImg.width = imgW;
     targetTitle.innerText = title;
     targetBranding.innerText = branding;
     targetBox.addEventListener("click", () => {
