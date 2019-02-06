@@ -28,6 +28,12 @@ const branding4 = document.getElementById('branding-4');
 const branding5 = document.getElementById('branding-5');
 const branding6 = document.getElementById('branding-6');
 
+const cat1 = document.getElementById('cat-1');
+const cat2 = document.getElementById('cat-2');
+const cat3 = document.getElementById('cat-3');
+const cat4 = document.getElementById('cat-4');
+const cat5 = document.getElementById('cat-5');
+const cat6 = document.getElementById('cat-6');
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
@@ -47,48 +53,60 @@ displayFetch = (data) => {
     let targetTitle = null;
     let targetBranding = null;
     let targetBox = null;
+    let targetCategory = null;
     let imgUrl = dataArray[i].thumbnail[0].url;
     let imgH = dataArray[i].thumbnail[0].height;
     let imgW = dataArray[i].thumbnail[0].width;
     let title = dataArray[i].name;
     let branding = dataArray[i].branding;
     let link = dataArray[i].url;
+    let category = dataArray[i].categories[0]
     if (i === 0) {
       targetImg = img1;
       targetTitle = title1;
       targetBranding = branding1;
       targetBox = display1;
+      targetCategory = cat1;
     } else if (i === 1) {
       targetImg = img2;
       targetTitle = title2;
       targetBranding = branding2;
       targetBox = display2;
+      targetCategory = cat2;
     } else if (i === 2) {
       targetImg = img3;
       targetTitle = title3;
       targetBranding = branding3;
       targetBox = display3;
+      targetCategory = cat3;
     } else if (i === 3) {
       targetImg = img4;
       targetTitle = title4;
       targetBranding = branding4;
       targetBox = display4;
+      targetCategory = cat4;
     } else if (i === 4) {
       targetImg = img5;
       targetTitle = title5;
       targetBranding = branding5;
       targetBox = display5;
+      targetCategory = cat5;
     } else if (i === 5) {
       targetImg = img6;
       targetTitle = title6;
       targetBranding = branding6;
       targetBox = display6;
+      targetCategory = cat6;
     }
+    let bigLetter = category[0].toUpperCase();
+    let backHalf = category.slice(1);
+    let cappedCategory = bigLetter + backHalf;
     targetImg.src = imgUrl;
     // targetImg.height = imgH;
     // targetImg.width = imgW;
     targetTitle.innerText = title;
     targetBranding.innerText = branding;
+    targetCategory.innerText = cappedCategory;
     targetBox.addEventListener("click", () => {
       window.location = link;
     })
