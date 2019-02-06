@@ -1,4 +1,4 @@
-const API_URL = `https://api.taboola.com/1.2/json/apitestaccount/recommendations.get?app.type=web&app.apikey=7be65fc78e52c11727793f68b06d782cff9ede3c&source.id=%2Fdigiday-publishing-summit%2F&source.url=https%3A%2F%2Fblog.taboola.com%2Fdigiday-publishing-summit%2F&source.type=text&placement.organic-type=mix&placement.visible=true&placement.available=true&placement.rec-count=6&placement.name=Below%20Article%20Thumbnails&placement.thumbnail.width=640&placement.thumbnail.height=480&user.session=init`
+const API_URL = `https://api.taboola.com/1.2/json/apitestaccount/recommendations.get?app.type=web&app.apikey=7be65fc78e52c11727793f68b06d782cff9ede3c&source.id=%2Fdigiday-publishing-summit%2F&source.url=https%3A%2F%2Fblog.taboola.com%2Fdigiday-publishing-summit%2F&source.type=text&placement.organic-type=mix&placement.visible=true&placement.available=true&placement.rec-count=6&placement.name=Below%20Article%20Thumbnails&placement.thumbnail.width=640&placement.thumbnail.height=480&user.session=init`;
 
 const display1 = document.getElementById('box-1');
 const display2 = document.getElementById('box-2');
@@ -39,78 +39,58 @@ document.addEventListener("DOMContentLoaded", () => {
 // image title branding
 
 displayFetch = (data) => {
-  let dataArray = data.list
+  let dataArray = data.list;
   console.log(dataArray);
   console.log("first", dataArray[0]);
   for (let i = 0; i < dataArray.length; i++) {
-    let targetImg = null
-    let targetTitle = null
-    let targetBranding = null
-    let imgUrl = dataArray[i].thumbnail[0].url
-    let imgH = dataArray[i].thumbnail[0].height
-    let imgW = dataArray[i].thumbnail[0].width
-    let title = dataArray[i].name
-    let branding = dataArray[i].branding
-    let link = dataArray[i].url
+    let targetImg = null;
+    let targetTitle = null;
+    let targetBranding = null;
+    let targetBox = null;
+    let imgUrl = dataArray[i].thumbnail[0].url;
+    let imgH = dataArray[i].thumbnail[0].height;
+    let imgW = dataArray[i].thumbnail[0].width;
+    let title = dataArray[i].name;
+    let branding = dataArray[i].branding;
+    let link = dataArray[i].url;
     if (i === 0) {
       targetImg = img1;
       targetTitle = title1;
       targetBranding = branding1;
+      targetBox = display1;
     } else if (i === 1) {
       targetImg = img2;
       targetTitle = title2;
       targetBranding = branding2;
+      targetBox = display2;
     } else if (i === 2) {
       targetImg = img3;
       targetTitle = title3;
       targetBranding = branding3;
+      targetBox = display3;
     } else if (i === 3) {
       targetImg = img4;
       targetTitle = title4;
       targetBranding = branding4;
+      targetBox = display4;
     } else if (i === 4) {
       targetImg = img5;
       targetTitle = title5;
       targetBranding = branding5;
+      targetBox = display5;
     } else if (i === 5) {
       targetImg = img6;
       targetTitle = title6;
       targetBranding = branding6;
+      targetBox = display6;
     }
     targetImg.src = imgUrl;
     targetImg.height = imgH;
     targetImg.width = imgW;
     targetTitle.innerText = title;
     targetBranding.innerText = branding;
-
-
-
-
+    targetBox.addEventListener("click", () => {
+      window.location = link;
+    })
   }
-  // display1.innerHTML = "Yo!"
-  console.log(img1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let hi = document.getElementById('hi')
-//
-// handleClick = (event) => {
-//   console.log("hi there!");
-// }
-//
-// hi.addEventListener('click', handleClick);
