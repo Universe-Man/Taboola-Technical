@@ -7,25 +7,28 @@ const display4 = document.getElementById('box-4');
 const display5 = document.getElementById('box-5');
 const display6 = document.getElementById('box-6');
 
+const img1 = document.getElementById('img-1');
+
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
-
-
-
-
     fetch(API_URL)
       .then(res => res.json())
       .then(json => displayFetch(json))
   });
 
-
-
+// image title branding
 
 displayFetch = (data) => {
-  console.log(data.list);
+  let dataArray = data.list
+  console.log(dataArray);
+  console.log("first", dataArray[0]);
+  for (let i = 0; i < dataArray.length; i++) {
+    let imgUrl = dataArray[i].thumbnail[0].url
+    console.log(imgUrl);
+  }
+  display1.innerHTML = "Yo!"
 }
-console.log(display1);
-console.log(document.getElementById('main-display'));
 
 
 

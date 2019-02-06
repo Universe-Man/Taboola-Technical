@@ -2,6 +2,10 @@ body {
   background-color: green;
 }
 
+#header {
+  text-align: center;
+}
+
 
 .column {
   float: left;
